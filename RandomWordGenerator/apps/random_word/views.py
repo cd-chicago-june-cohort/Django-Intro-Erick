@@ -7,7 +7,6 @@ from django.utils.crypto import get_random_string
 def index(request):
     if 'counter' not in request.session:
         request.session['counter'] = 0
-    
     randomWord = get_random_string(length=14)
     info = {
         'word' : randomWord,
