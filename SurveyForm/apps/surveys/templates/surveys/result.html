@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>Survey Results</title>
+    </head>
+    <body>
+        <h1>Thanks for submitting this form! You have submitted this form {{request.session.counter}} times now.</h1>
+        <h2>Submitted Information</h2>
+        <h3>Name: {{request.session.name}}</h3>
+        <h3>Dojo Location: {{request.session.location}}</h3>
+        <h3>Favorite Language: {{request.session.language}}</h3>
+        <h3>Comment: {{request.session.comment}}</h3>
+    </body>
+</html>

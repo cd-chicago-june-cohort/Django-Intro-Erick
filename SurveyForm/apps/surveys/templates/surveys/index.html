@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <form action='surveys/process', method="post">
+            {% csrf_token %}
+            Your Name: <input type="text" name="name"><br>
+            Dojo Location: 
+            <select name="location">
+                <option value="seattle">Seattle</option>
+                <option value="chicago">Chicago</option>
+                <option value="dallas">Dallas</option>
+                <option value="tulsa">Tulsa</option>
+            </select><br>
+            Favorite Language: 
+            <select name="language">
+                <option value="javascript">JavaScript</option>
+                <option value="c++">C++</option>
+                <option value="c#">C#</option>
+                <option value="python">Python</option>
+            </select><br>
+            Comment (optional):<br><textarea name="comment" rows="5" cols="30"></textarea><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
