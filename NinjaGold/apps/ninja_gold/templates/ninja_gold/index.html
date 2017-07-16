@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ninja_gold/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Ninja Gold</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="yourGold">
+                <p class="gold">Your Gold: </p>
+                <div id="displayGold">{{request.session.gold}}</div>
+            </div>
+            <div class="places">
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <h2>Farm</h2>
+                    <h4>(earns 10-20 golds)</h4>
+                    <input type="hidden" name="building" value="farm"/>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="places">
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <h2>Cave</h2>
+                    <h4>(earns 5-10 golds)</h4>
+                    <input type="hidden" name="building" value="cave"/>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="places">
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <h2>House</h2>
+                    <h4>(earns 2-5 golds)</h4>
+                    <input type="hidden" name="building" value="house"/>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="places">
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <h2>Casino</h2>
+                    <h4>(earns/takes 0-50 golds)</h4>
+                    <input type="hidden" name="building" value="casino"/>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <p id="act">Activities:</p>
+            <div id="activity">
+                <p class="outcome">{{request.session.place}}</p><br>
+            </div>
+        </div>
+    </body>
+</html>
