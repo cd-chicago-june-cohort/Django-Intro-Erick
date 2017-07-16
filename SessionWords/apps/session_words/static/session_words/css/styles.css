@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    width: 1200px;
+}
+#addWord{
+    width: 300px;
+    display: inline-block;
+    height: 500px;
+    vertical-align: top;
+    padding: 40px;
+}
+#clearSessionBox{
+    width: 500px;
+    display: inline-block;
+    height: 500px;
+    padding: 40px;
+}
+#clearSessionButton{
+    float: right;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}
+#addedOn{
+    font-size: 15px;
+    color: black;
+}
+.font30{
+    font-size: 30px;
+}
+.font20{
+    font-size: 20px;    
+}

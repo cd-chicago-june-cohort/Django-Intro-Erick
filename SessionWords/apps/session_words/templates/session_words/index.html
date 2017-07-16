@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            {% load static %}
+        <link rel="stylesheet" href="{% static 'session_words/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+        <title>Session Words</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="addWord">
+                <form action="/word", method="post">
+                    {% csrf_token %}
+                    <h1>Add a new word</h1>
+                    <input type="text" name="wordEntered">
+                    <h3>Choose a color</h3>
+                    <input type="radio" name="color" value="red">Red<br>
+                    <input type="radio" name="color" value="green">Green<br>
+                    <input type="radio" name="color" value="blue">Blue<br><br>
+                    <input type="checkbox" name="fontSize">show in BIG fonts!<br><br>
+                    <input type="submit" value="Add to Session">
+                </form>
+            </div>
+            <div id="clearSessionBox">
+                <form action="/clear">
+                    {% csrf_token %}
+                    <input id="clearSessionButton" type="submit" value="Clear Session"><br>
+                    {% for word in request.session.wordList %}
+                        <h1 class="{{word.color}}"><span class="font{{word.font}}">{{word.word}}</span> - <span id="addedOn">added on {{word.time}}</span></h1>
+                    {% endfor %}
+                </form>
+            </div>
+        </div>  
+    </body>
+</html>
