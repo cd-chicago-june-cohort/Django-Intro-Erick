@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout</title>
+    </head>
+    <body>
+        <h1>Thank you for your business!</h1>
+        <h3>We charged your credit card for ${{request.session.price}}</h3>
+        <h3>You have ordered {{request.session.counter}} itmes so far and spend ${{request.session.sum}} with Amadon.com!</h3>
+        <a href="/"><input type="submit" value="Go back"></a>
+    </body>
+</html>

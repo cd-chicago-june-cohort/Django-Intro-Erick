@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'amadon/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>Amadon Store</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="amadonBox">
+                <h1>Amadon Store!</h1>
+                <table id="amadonTable">
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <form action="/amadon/buy" method="post">
+                        {% csrf_token %}
+                            <td>Dojo Tshirt</td>
+                            <td>$19.99</td>
+                            <td>{% include 'amadon/quantitySnippet.html' %}</td>
+                            <td><input type="submit" value="Buy!"></td>
+                            <input type="hidden" name="price" value="19.99">
+                        </form>
+                    </tr>
+                    <tr>
+                        <form action="/amadon/buy" method="post">
+                        {% csrf_token %}
+                            <td>Dojo Sweater</td>
+                            <td>$29.99</td>
+                            <td>{% include 'amadon/quantitySnippet.html' %}</td>
+                            <td><input type="submit" value="Buy!"></td>
+                            <input type="hidden" name="price" value="29.99">
+                        </form>
+                    </tr>
+                    <tr>
+                        <form action="/amadon/buy" method="post">
+                        {% csrf_token %}
+                            <td>Dojo Cup</td>
+                            <td>$4.99</td>
+                            <td>{% include 'amadon/quantitySnippet.html' %}</td>
+                            <td><input type="submit" value="Buy!"></td>
+                            <input type="hidden" name="price" value="4.99">
+                        </form>
+                    </tr>
+                    <tr>
+                        <form action="/amadon/buy" method="post">
+                        {% csrf_token %}
+                            <td>Algorithm Book</td>
+                            <td>$49.99</td>
+                            <td>{% include 'amadon/quantitySnippet.html' %}</td>
+                            <td><input type="submit" value="Buy!"></td>
+                            <input type="hidden" name="price" value="49.99">
+                        </form>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

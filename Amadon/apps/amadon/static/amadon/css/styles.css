@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    width: 970px;
+    padding: 50px;
+}
+#amadonBox{
+    width: 800px;
+    height: 400px;
+    padding: 20px;
+}
+#amadonTable{
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
